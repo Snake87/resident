@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ResidentActivity!</string>
+    <string name="app_name">Resident</string>
+    
+    <string name="personalData">persönliche Daten</string>
+    <string name="technicalData">technische Daten</string>
+        
+        
+    <string name="txtFirstname">Vorname</string>    
+    <string name="txtLastname">Nachname</string>
+    <string name="txtYearofBirth">Geburstsjahr</string>
+    <string name="txtIdentification">Idendifikation an</string>
+    <string name="txtUpdatesInterval">Aktualsierung der Koordinaten</string>
+        
+    <string name="txtSumFirstname">Geben Sie ihren Vornamen ein</string>     
+    <string name="txtSumLastname">Geben Sie ihren Nachnamen ein</string> 
+    <string name="txtSumYearofBirth">Geben Sie ihr Geburstsjahr ein</string>
+    <string name="txtSumIdentification">Geben Sie ihre Idendifikation ein (Name.Abteilung)</string>     
+    <string name="txtSumUpdatesInterval">Wie oft sollen die Ortskoordinaten abgefragt werden (je kleiner der Wert desto größer der Akkuverbrauch)</string>    
+    <string name="firstname">firstname</string>    
+    <string name="lastname">lastname</string>
+        
+    <string name="errorTitle">ungültige Eingabe</string>
+	<string name="errorFirstname">Sie haben keinen gültigen Vornamen eingeben</string>
+	<string name="errorLastname">Sie haben keinen gültigen Nachnamen eingeben</string>
+	<string name="errorButton">OK</string>
+
+</resources>

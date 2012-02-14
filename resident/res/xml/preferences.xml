@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+ <PreferenceCategory
+	android:title="@string/personalData"
+	android:key="personal_data">
+	
+	<EditTextPreference
+		android:key="firstname"
+		android:title="@string/txtFirstname"
+		android:summary="@string/txtSumFirstname"/>
+	
+	<EditTextPreference
+		android:key="lastname"
+		android:title="@string/txtLastname"
+		android:summary="@string/txtSumLastname"/>
+	
+	<EditTextPreference
+		android:key="year_of_birth"
+		android:title="@string/txtYearofBirth"
+		android:summary="@string/txtSumYearofBirth"
+		android:inputType="number"
+		android:maxLength="4"/>
+
+  </PreferenceCategory>    
+
+  <PreferenceCategory
+	android:title="@string/technicalData"
+	android:key="personal_data">
+	
+		<EditTextPreference
+			android:key="identification"
+			android:title="@string/txtIdentification"
+			android:summary="@string/txtSumIdentification" />
+			
+		<ListPreference
+			android:key="updatesInterval"
+			android:title="@string/txtUpdatesInterval"
+			android:summary="@string/txtSumUpdatesInterval"
+			android:defaultValue="0"
+			android:entries="@array/updateInterval"
+			android:entryValues="@array/updateIntervalValues" />
+	
+  </PreferenceCategory>
+</PreferenceScreen>

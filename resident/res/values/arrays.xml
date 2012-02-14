@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="updateInterval">
+		<item name="0">keine Aktualsierung</item>
+		<item name="15000">Jede 15 Sekunde</item>
+		<item name="30000">Jede 30 Sekunde</item>
+		<item name="45000">Jede 45 Sekunde</item>
+		<item name="60000">Jede 1 Minute</item>
+		<item name="300000">Jede 5 Minuten</item>
+		<item name="600000">Jede 10 Minuten</item>
+	</string-array> 
+	
+	<string-array name="updateIntervalValues">
+		<item name="0">0</item>
+		<item name="5000">5000</item>
+		<item name="30000">30000</item>
+		<item name="45000">45000</item>
+		<item name="60000">60000</item>
+		<item name="300000">300000</item>
+		<item name="600000">600000</item>
+	</string-array>
+</resources>
