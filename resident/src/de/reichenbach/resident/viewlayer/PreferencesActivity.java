@@ -18,7 +18,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 /**
- * @author roberto
+ * @author roberto reichenbach
  */
 
 public class PreferencesActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
