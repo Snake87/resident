@@ -46,21 +46,21 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		super.onCreate(savedInstanceState);		 
 		addPreferencesFromResource( R.xml.preferences );
 		init();
+		addInputFilter(firstname);
+		addInputFilter(lastname);
 	}
 	
-	
+	/** Initialize the variables. */
 	private void init() {
-		context	= getApplicationContext();
-		prefs		= PreferenceManager.getDefaultSharedPreferences( context );
+		context			= getApplicationContext();
+		prefs				= PreferenceManager.getDefaultSharedPreferences( context );
 		inputFilter = new InputFilters();
-
-		firstname = (EditTextPreference) findPreference( FIRSTNAME );
-		firstname.getEditText().setFilters(new InputFilter[] {
-				inputFilter.getLetterFilter()
-		});
-		
-		lastname = (EditTextPreference) findPreference( LASTNAME );
-		lastname.getEditText().setFilters(new InputFilter [] {
+		lastname 		= (EditTextPreference) findPreference( LASTNAME );
+		firstname 	= (EditTextPreference) findPreference( FIRSTNAME );
+	}
+	
+	private void addInputFilter(EditTextPreference editText) {
+		editText.getEditText().setFilters(new InputFilter[]{
 				inputFilter.getLetterFilter()
 		});
 	}
@@ -85,7 +85,6 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
-		// TODO Auto-generated method stub
 		
 	}	
 }

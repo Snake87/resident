@@ -22,9 +22,6 @@
     <string name="firstname">firstname</string>    
     <string name="lastname">lastname</string>
         
-    <string name="errorTitle">ungültige Eingabe</string>
-	<string name="errorFirstname">Sie haben keinen gültigen Vornamen eingeben</string>
-	<string name="errorLastname">Sie haben keinen gültigen Nachnamen eingeben</string>
-	<string name="errorButton">OK</string>
-
+    <string name="widget">Hilferuf</string>
+    
 </resources>
