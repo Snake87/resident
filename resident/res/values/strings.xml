@@ -2,11 +2,14 @@
 <resources>
 
     <string name="hello">Hello World, ResidentActivity!</string>
-    <string name="app_name">Resident</string>
+    <string name="app_name">GPS-Hilfesystem</string>
     
     <string name="personalData">persönliche Daten</string>
     <string name="technicalData">technische Daten</string>
-        
+    
+    <string name="actionSetting">Einstellung</string>
+    <string name="actionInfo">Info</string>
+
         
     <string name="txtFirstname">Vorname</string>    
     <string name="txtLastname">Nachname</string>

@@ -3,20 +3,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    
-	<Button 
-	    android:layout_width="fill_parent"
+	<TextView 
+	    android:id="@+id/status"
 	    android:layout_height="wrap_content"
-	    android:textSize="28dip"
-	    android:text="Einstellungen"
-	    android:id="@+id/settings"/>
+	    android:layout_width="fill_parent"
+	    android:gravity="center_horizontal"
+	    android:textColor="#fffaf0"
+	    android:textSize="28dp"
+	    
+	    
+	    />
 
-		<Button 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	  	android:textSize="28dip"
-	  	android:id="@+id/help"
-	    android:text="Hilfe"/>
+    
+		
     
     
     
