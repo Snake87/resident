@@ -4,11 +4,12 @@
 package de.reichenbach.resident.test.networklayer;
 
 import de.reichenbach.resident.networklayer.LocationHelper;
+import de.reichenbach.resident.networklayer.TransferService;
 import de.reichenbach.resident.viewlayer.ResidentActivity;
 import android.test.ActivityInstrumentationTestCase2;
 
 /**
- * @author roberto
+ * @author roberto reichenbach
  *
  */
 public class LocationHelperTest extends ActivityInstrumentationTestCase2<ResidentActivity> {
@@ -29,7 +30,9 @@ public class LocationHelperTest extends ActivityInstrumentationTestCase2<Residen
 	protected void setUp() throws Exception {
 		super.setUp();
 		activity 				= getActivity();
-		locationHelper 	= new LocationHelper(activity);
+		
+		TransferService a = new TransferService();
+		locationHelper 	= new LocationHelper(activity.getApplicationContext(),a);
 	}
 	
 	public void testPreCondition() {

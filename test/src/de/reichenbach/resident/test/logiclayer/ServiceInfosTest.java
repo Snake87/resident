@@ -5,10 +5,12 @@ package de.reichenbach.resident.test.logiclayer;
 
 import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.ServiceTestCase;
 import android.test.mock.MockApplication;
 import android.test.mock.MockPackageManager;
 import de.reichenbach.resident.logiclayer.ServiceInfos;
 import de.reichenbach.resident.networklayer.LocationHelper;
+import de.reichenbach.resident.networklayer.TransferService;
 import de.reichenbach.resident.viewlayer.ResidentActivity;
 import junit.framework.TestCase;
 
@@ -18,12 +20,8 @@ import junit.framework.TestCase;
  */
 public class ServiceInfosTest extends ActivityInstrumentationTestCase2<ResidentActivity> {
 	
-	public static final String PACKAGE_PATH = "de.reichenbach.resident.networklayer";
-	public static final String CLASSNAME = "LocationHelper";
-	
+	private ResidentActivity actvity;
 	private ServiceInfos serviceInfos;
-	private LocationHelper locationService;
-	private ResidentActivity activity;
 	
 	/**
 	 * @param name
@@ -38,26 +36,23 @@ public class ServiceInfosTest extends ActivityInstrumentationTestCase2<ResidentA
 	 */
 	protected void setUp() throws Exception {
 		super.setUp();
-		activity 				= getActivity();
-		locationService = new LocationHelper(activity);
-		serviceInfos		= new ServiceInfos(activity.getApplication());
+		actvity	= getActivity();
+		serviceInfos = new ServiceInfos(getActivity().getApplication());	
 	}
-
+	
 	public void testPreCondition() {
-		assertNotNull(activity);
-		assertNotNull(locationService);
+		assertNotNull(actvity);
 		assertNotNull(serviceInfos);
 	}
-	
+
 	public void testIsServiceRunning() {
-		assertFalse(serviceInfos.isServiceRunning(PACKAGE_PATH,CLASSNAME));
+		Intent intent = new Intent(actvity.getApplicationContext(),TransferService.class);
+		intent.setClass(actvity.getApplicationContext(), TransferService.class);
+		actvity.startService(intent);
+		assertTrue(serviceInfos.isServiceRunning());
+		
 		
 	}
-	
-	private void startService() {
-		Intent intent = new Intent(activity,LocationHelper.class);
-	}
-	
 	
 	/* (non-Javadoc)
 	 * @see junit.framework.TestCase#tearDown()
