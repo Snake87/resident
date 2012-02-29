@@ -1,6 +1,7 @@
 package de.reichenbach.resident.persistencelayer;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceManager;
@@ -16,19 +17,16 @@ public class PreferencesHelper {
 	public static final String IDENTIFICATION = "identification";
 	public static final String UPDATE_INTERVAL = "updatesInterval";
 	public static final String ERROR = "u/a";
-	
+
 	/** configuration data manage */
 	private SharedPreferences prefs;
+
 	/** current actvity */
-	private Activity actvity;
-	
-	
-	public PreferencesHelper(Activity activity) {
-		this.actvity = activity;
-		prefs 			 = PreferenceManager.getDefaultSharedPreferences(
-									 actvity.getApplicationContext());
+
+	public PreferencesHelper(Context context) {
+		prefs = PreferenceManager.getDefaultSharedPreferences(context);
 	}
-	
+
 	/**
 	 * 
 	 * @return the prefs
@@ -36,7 +34,7 @@ public class PreferencesHelper {
 	public SharedPreferences getPrefs() {
 		return prefs;
 	}
-	
+
 	/**
 	 * 
 	 * @return the firstname
@@ -44,15 +42,15 @@ public class PreferencesHelper {
 	public String getFirstname() {
 		return prefs.getString(FIRSTNAME, ERROR);
 	}
-	
-	/** 
+
+	/**
 	 * 
 	 * @return the lastname
 	 */
 	public String getLastname() {
 		return prefs.getString(LASTNAME, ERROR);
 	}
-	
+
 	/**
 	 * 
 	 * @return the identification
@@ -60,12 +58,12 @@ public class PreferencesHelper {
 	public String getIdentification() {
 		return prefs.getString(IDENTIFICATION, ERROR);
 	}
-	
+
 	/**
 	 * 
 	 * @return the update interval
 	 */
-	public String getUpdateInterval () {
+	public String getUpdateInterval() {
 		return prefs.getString(UPDATE_INTERVAL, ERROR);
 	}
 }

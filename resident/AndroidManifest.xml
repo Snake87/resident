@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".viewlayer.PreferencesActivity"></activity>
+        <service android:name=".networklayer.TransferService"></service>
     </application>
 
 </manifest>

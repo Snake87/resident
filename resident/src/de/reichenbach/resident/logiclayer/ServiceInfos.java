@@ -8,6 +8,8 @@ import java.util.List;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.Application;
+import android.content.Context;
+import android.util.Log;
 
 /**
  * @author roberto
@@ -19,24 +21,24 @@ public class ServiceInfos {
 	private ActivityManager activityManager;
 	/** List with all services.*/
 	private List<RunningServiceInfo> services;
-
+	/** Application */
+	private Application app;
 	
 	public ServiceInfos(Application app) {
 		activityManager = (ActivityManager) app.getSystemService(app.ACTIVITY_SERVICE);
 		services				= activityManager.getRunningServices(Integer.MAX_VALUE);
+		this.app				= app;
 	}
 	
-	public boolean isServiceRunning(String path, String classname) {
-		boolean serviceFound = false;
-		
-		for (int i = 0; i < services.size();i++) {
-			if(path.equals(services.get(i).service.getPackageName())) {
-				if(classname.equals(services.get(i).service.getClassName())) {
-					serviceFound = true;
-				}
-			}
-		}
-		return serviceFound;
-		
-	}
+	
+	public boolean isServiceRunning() {
+    ActivityManager manager = (ActivityManager) app.getSystemService(Context.ACTIVITY_SERVICE);
+    for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+        if ("de.reichenbach.resident.networklayer.TransferService".equals(service.service.getClassName())) {
+            return true;
+        }
+    }
+    return false;
+}
+
 }
